@@ -2,6 +2,7 @@
 import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import AuthUser from "../components/AuthUser";
+import { Link } from "react-router-dom";
 
 function Login() {
 
@@ -43,12 +44,16 @@ function Login() {
                         onChange={e=>setPassword(e.target.value)}
                         name="pswd" />
                 </div>
-                {/* <div className="form-check mb-3">
+                <div className="form-check mb-3 d-flex justify-content-between">
                     <label className="form-check-label">
                     <input className="form-check-input" type="checkbox" name="remember"/> Remember me
                     </label>
-                </div> */}
-                <button type="submit" onClick={submitForm} className="btn btn-primary">Login</button>
+                    <Link to='/forgotpassword' className="link">Forgot password?</Link>
+                </div>
+                <div className="d-flex justify-content-between">
+                <button type="submit" onClick={submitForm} className="btn btn-primary login-button">Login</button>
+                <Link type="button" className="btn btn-info login-button" to='/signup'>Sign Up</Link>
+                </div>
                 </div>
             </div>
         </div>
