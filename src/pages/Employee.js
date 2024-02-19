@@ -10,7 +10,7 @@ function Employee() {
 
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/employee`).then(res => {
+        axios.get(`http://127.0.0.1:9000/api/employee`).then(res => {
             setEmployee(res.data.data);
             setLoding(false);
         })
@@ -22,7 +22,7 @@ function Employee() {
         const thisClicked = e.currentTarget;
         thisClicked.innerText = 'Deleting...';
 
-        axios.delete(`http://127.0.0.1:8000/api/employee/${id}`)
+        axios.delete(`http://127.0.0.1:9000/api/employee/${id}`)
         .then(res => {
             alert(res.data.message);
             thisClicked.closest('tr').remove();
